@@ -1,6 +1,7 @@
 extends Area2D 
 signal hit
 
+#TESTING GIT HUB HI DOES THIS WORK
 
 # Declare member variables here. Examples:
 export var speed = 400
