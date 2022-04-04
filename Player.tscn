@@ -1,37 +1,71 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=5]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D 
+signal hit
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ null, null ],
-"loop": true,
-"name": "up",
-"speed": 5.0
-}, {
-"frames": [ null, null ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
+#TESTING GIT HUB HI DOES THIS WORK
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 53.9612
-height = 28.0776
+# Declare member variables here. Examples:
+export var speed = 400
+var screen_size
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	screen_size = get_viewport_rect().size
+	hide()
+	
+func _process(delta):
+	var velocity = Vector2.ZERO #The player's movement vector
+	if Input.is_action_pressed(\"move_right\"):
+		velocity.x += 1
+	if Input.is_action_pressed(\"move_left\"):
+		velocity.x -= 1
+	if Input.is_action_pressed(\"move_down\"):
+		velocity.y += 1
+	if Input.is_action_pressed(\"move_up\"):
+		velocity.y -= 1
+	
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$AnimatedSprite.play()
+	else:
+		$AnimatedSprite.stop()
+	position += velocity * delta
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y)
+	
+	if velocity.x != 0:
+		$AnimatedSprite.animation = \"walk\"
+		$AnimatedSprite.flip_v = false
+		$AnimatedSprite.flip_h = velocity.x < 0
+	elif velocity.y != 0:
+		$AnimatedSprite.animation = \"up\"
+		$AnimatedSprite.flip_v = velocity.y > 0
+	
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Player_body_entered(_body):
+	hide()
+	emit_signal(\"hit\")
+	$CollisionShape2D.set_deferred(\"disabled\", true)
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+"
 
 [node name="Player" type="Area2D"]
 scale = Vector2( 0.500359, 0.5 )
-script = ExtResource( 5 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-animation = "up"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 1.00429, 1 )
-shape = SubResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
