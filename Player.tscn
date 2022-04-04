@@ -6,12 +6,12 @@
 animations = [ {
 "frames": [ null, null ],
 "loop": true,
-"name": "walk",
+"name": "up",
 "speed": 5.0
 }, {
 "frames": [ null, null ],
 "loop": true,
-"name": "up",
+"name": "walk",
 "speed": 5.0
 } ]
 
