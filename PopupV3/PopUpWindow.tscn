@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://PopupV3/PopUpWindow.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
+margin_top = 20.0
+margin_right = 97.0
+margin_bottom = 74.0
+window_title = "Tips!"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Make sure to get sleep!"
+valign = 1
+autowrap = true
+
+[node name="Help" type="Button" parent="."]
+margin_right = 46.0
+margin_bottom = 53.0
+text = "Help"
+
+[connection signal="button_up" from="Help" to="." method="_on_Help_button_up"]
