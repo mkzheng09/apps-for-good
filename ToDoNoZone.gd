@@ -1,16 +1,13 @@
 extends Node2D
 
-var xtodo = 64
-#var xdoing = 206
-#var xdone = 343
-var y = 60
+var xtodo = 243
+var y = 45
 
 var list = []
 
 var done = false
 
 func _on_AddItem_pressed():
-	y = y + 60
 	
 	var new_item_scn = load("res://NoLerp.tscn")
 	var item = new_item_scn.instance()
@@ -36,3 +33,7 @@ func _on_Help_button_up():
 			#task.queue_free()
 			#task.hide()
 
+
+
+func _on_Back_pressed():
+	get_tree().change_scene("res://World.tscn")

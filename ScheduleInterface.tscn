@@ -4,8 +4,9 @@
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2( 0, 1 )
+scale = Vector2( 0.76, 1 )
 color = Color( 0.647059, 0.647059, 0.647059, 1 )
-polygon = PoolVector2Array( 400, -1, 400, 36, 0, 36, 0, -1 )
+polygon = PoolVector2Array( 400, -1, 400, 17.5266, 400, 36, 0, 36, 0, -1 )
 
 [node name="HourDiv" type="Node" parent="."]
 

@@ -19,3 +19,7 @@ func _on_TouchScreenButton_pressed():
 	y = y + 100
 	get_node("Sliders").add_child(slider)
 	
+
+
+func _on_Home_pressed():
+	get_tree().change_scene("res://World.tscn")

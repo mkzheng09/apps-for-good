@@ -1,7 +1,7 @@
 extends Node2D
 
-var y = 66
-var x = 300
+var y = 100
+var x = 290
 
 func _on_Button_pressed():
 	
@@ -9,3 +9,7 @@ func _on_Button_pressed():
 	var item = new_item_scn.instance()
 	item.set_position(Vector2(x,y))
 	get_node("Tasks").add_child(item)
+
+
+func _on_BackHome_pressed():
+	get_tree().change_scene("res://World.tscn")
