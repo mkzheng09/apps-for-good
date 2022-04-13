@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://DragNDrop.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 60, 19.5 )
+
+[node name="NoLerp" type="Node2D"]
+position = Vector2( 71, 95 )
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="LineEdit" type="LineEdit" parent="Area2D"]
+margin_left = -60.0
+margin_top = -11.0
+margin_right = 60.0
+margin_bottom = 13.0
+text = "Type here"
+expand_to_text_length = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["items"]]
+position = Vector2( 0, 0.5 )
+shape = SubResource( 1 )
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

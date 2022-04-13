@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="Theme" id=2]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="DoneBG" type="Polygon2D" parent="."]
+position = Vector2( 273, 0 )
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+polygon = PoolVector2Array( 0, 0, 127, 0, 127, 29, 63, 29, 0, 29 )
+
+[node name="DoingBG" type="Polygon2D" parent="."]
+position = Vector2( 136, 0 )
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+polygon = PoolVector2Array( 0, 0, 127, 0, 127, 29, 63, 29, 0, 29 )
+
+[node name="ToDoBG" type="Polygon2D" parent="."]
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+polygon = PoolVector2Array( 0, 0, 127, 0, 127, 29, 63, 29, 0, 29 )
+
+[node name="Label" type="Label" parent="."]
+material = SubResource( 1 )
+margin_right = 126.0
+margin_bottom = 29.0
+theme = SubResource( 2 )
+text = "To Do"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -63.0
+margin_right = 63.0
+margin_bottom = 29.0
+text = "Doing"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -126.0
+margin_bottom = 29.0
+text = "Done"
+align = 1
+valign = 1
