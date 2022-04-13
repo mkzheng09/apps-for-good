@@ -12,8 +12,8 @@ script = ExtResource( 1 )
 [node name="WindowDialog" type="WindowDialog" parent="."]
 visible = true
 margin_top = 20.0
-margin_right = 97.0
-margin_bottom = 74.0
+margin_right = 475.0
+margin_bottom = 720.0
 window_title = "Tips!"
 __meta__ = {
 "_editor_description_": ""
@@ -74,6 +74,13 @@ text = "Try being smarter!"
 valign = 1
 autowrap = true
 
+[node name="Suggestions" type="Button" parent="."]
+margin_left = 347.0
+margin_top = 40.0
+margin_right = 435.0
+margin_bottom = 60.0
+text = "Suggestions"
+
 [node name="Help" type="Button" parent="."]
 margin_right = 46.0
 margin_bottom = 53.0
@@ -86,13 +93,6 @@ margin_right = 249.0
 margin_bottom = 298.0
 text = "Tips"
 
-[node name="Suggestions" type="Button" parent="."]
-margin_left = 347.0
-margin_top = 40.0
-margin_right = 435.0
-margin_bottom = 60.0
-text = "Suggestions"
-
+[connection signal="button_up" from="Suggestions" to="." method="_on_Suggestions_button_up"]
 [connection signal="button_up" from="Help" to="." method="_on_Help_button_up"]
 [connection signal="button_up" from="Tips" to="." method="_on_Tips_button_up"]
-[connection signal="button_up" from="Suggestions" to="." method="_on_Suggestions_button_up"]
