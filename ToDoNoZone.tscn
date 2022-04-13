@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://PlusButton.png" type="Texture" id=2]
+[ext_resource path="res://ToDoNoZone.gd" type="Script" id=3]
+[ext_resource path="res://NoLerp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Rect.png" type="Texture" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="Theme" id=2]
+
+[node name="ToDoNoZone" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 398.0
+margin_top = 1.0
+margin_right = 480.0
+margin_bottom = 77.0
+text = "Help Menu"
+
+[node name="Zones" type="Node" parent="."]
+
+[node name="ToDo" type="Sprite" parent="Zones"]
+position = Vector2( 89.0609, 223.98 )
+rotation = 1.5708
+scale = Vector2( 1.89252, 0.953106 )
+texture = ExtResource( 5 )
+offset = Vector2( 88.6152, 26.4183 )
+
+[node name="Doing" type="Sprite" parent="Zones"]
+position = Vector2( 225, 224 )
+rotation = 1.5708
+scale = Vector2( 1.89252, 0.953106 )
+texture = ExtResource( 5 )
+offset = Vector2( 88.6152, 26.4183 )
+
+[node name="Done" type="Sprite" parent="Zones"]
+position = Vector2( 362, 224 )
+rotation = 1.5708
+scale = Vector2( 1.89252, 0.953105 )
+texture = ExtResource( 5 )
+offset = Vector2( 88.6152, 26.4183 )
+
+[node name="DoneBG" type="Polygon2D" parent="Zones"]
+position = Vector2( 273, 0 )
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+polygon = PoolVector2Array( 0, 0, 127, 0, 127, 29, 63, 29, 0, 29 )
+
+[node name="DoingBG" type="Polygon2D" parent="Zones"]
+position = Vector2( 136, 0 )
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+polygon = PoolVector2Array( 0, 0, 127, 0, 127, 29, 63, 29, 0, 29 )
+
+[node name="ToDoBG" type="Polygon2D" parent="Zones"]
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+polygon = PoolVector2Array( 0, 0, 127, 0, 127, 29, 63, 29, 0, 29 )
+
+[node name="Label" type="Label" parent="Zones"]
+material = SubResource( 1 )
+margin_right = 126.0
+margin_bottom = 29.0
+theme = SubResource( 2 )
+text = "To Do"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Zones"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -104.0
+margin_right = 22.0
+margin_bottom = 29.0
+text = "Doing"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="Zones"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -206.0
+margin_right = -80.0
+margin_bottom = 29.0
+text = "Done"
+align = 1
+valign = 1
+
+[node name="List" type="Node" parent="."]
+
+[node name="NoLerp" parent="List" groups=["items"] instance=ExtResource( 4 )]
+position = Vector2( 64, 60 )
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="AddItem" type="TouchScreenButton" parent="Menu"]
+position = Vector2( 314, 664 )
+scale = Vector2( 0.02, 0.02 )
+normal = ExtResource( 2 )
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+margin_left = 2.0
+margin_top = 20.0
+margin_right = 479.0
+margin_bottom = 718.0
+window_title = "Help Menu"
+
+[node name="Label" type="Label" parent="WindowDialog"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Tips and such:"
+
+[connection signal="button_up" from="Button" to="." method="_on_Help_button_up"]
+[connection signal="pressed" from="Menu/AddItem" to="." method="_on_AddItem_pressed"]
