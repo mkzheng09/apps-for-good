@@ -33,8 +33,8 @@ autowrap = true
 [node name="Label2" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -63.0
-margin_right = 63.0
+margin_left = -104.0
+margin_right = 22.0
 margin_bottom = 29.0
 text = "Doing"
 align = 1
@@ -43,7 +43,8 @@ valign = 1
 [node name="Label3" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -126.0
+margin_left = -206.0
+margin_right = -80.0
 margin_bottom = 29.0
 text = "Done"
 align = 1

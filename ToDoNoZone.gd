@@ -16,6 +16,15 @@ func _on_AddItem_pressed():
 	var item = new_item_scn.instance()
 	item.set_position(Vector2(xtodo,y))
 	get_node("List").add_child(item)
+	
+	
+
+onready var popup = get_node("WindowDialog")
+
+onready var help = get_node("Help")
+
+func _on_Help_button_up():
+	popup.visible=true
 
 
 #func _on_ClearDone_timeout():
