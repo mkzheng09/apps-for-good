@@ -30,7 +30,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/SliderLabel/plugin.cfg" )
 
 [gdnative]
 
