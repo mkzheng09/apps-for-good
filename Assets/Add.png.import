@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlusButton.png-a55fcd1d01a1b672c9eea856ba1266b6.stex"
+path="res://.import/Add.png-dd1974b1d681ab394730e6dd6fa07fe7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlusButton.png"
-dest_files=[ "res://.import/PlusButton.png-a55fcd1d01a1b672c9eea856ba1266b6.stex" ]
+source_file="res://Assets/Add.png"
+dest_files=[ "res://.import/Add.png-dd1974b1d681ab394730e6dd6fa07fe7.stex" ]
 
 [params]
 
