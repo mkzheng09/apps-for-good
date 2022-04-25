@@ -23,3 +23,11 @@ func _on_TouchScreenButton_pressed():
 
 func _on_Home_pressed():
 	get_tree().change_scene("res://World.tscn")
+
+
+func _on_HabbitTracker_tree_exiting():
+	var water = $Water/HSlider.value
+	var exercise = $Exercise/HSlider.value
+	var sleep = $Sleep/HSlider.value
+	var DailyHomework = $DailyHomework/HSlider.value
+	var Chores = $Chores/HSlider.value
