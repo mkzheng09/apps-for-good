@@ -23,8 +23,12 @@ func _on_Button_pressed():
 	if $Panel/VCont/HCont/LineEdit.text and not is_selected:
 		add_item_todo()
 		$Panel/VCont/HCont/LineEdit.clear()
-	elif is_selected:
+	elif is_selected and $Panel/VCont/ToDo.is_anything_selected():
 		remove_selected_items_todo()
+	elif is_selected and $Panel/VCont/Doing.is_anything_selected():
+		remove_selected_items_doing()
+	elif is_selected and $Panel/VCont/Done.is_anything_selected():
+		remove_selected_items_done()
 
 #adds an item to the to do list
 func add_item_todo():
