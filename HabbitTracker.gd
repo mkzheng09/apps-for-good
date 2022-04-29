@@ -19,10 +19,8 @@ extends Node2D
 	#y = y + 100
 	#get_node("Sliders").add_child(slider)
 	
-
-func _on_Home_pressed():
+func _on_BackButton_pressed():
 	get_tree().change_scene("res://World.tscn")
-
 
 func _on_HabbitTracker_tree_exiting():
 	var water = $Water/HSlider.value
@@ -49,4 +47,3 @@ func _on_HabbitTracker_tree_entered():
 		$Sleep/HSlider.value = int(content[2])
 		$DailyHomework/HSlider.value = int(content[3])
 		$Chores/HSlider.value = int(content[4])
-	

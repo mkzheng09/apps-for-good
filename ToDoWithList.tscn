@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Montserrat/static/Montserrat-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/arrow.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Add.png" type="Texture" id=3]
 [ext_resource path="res://ToDoWithList.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -11,14 +14,35 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.572549, 0.87451, 0.952941, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
+
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
+
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
 
 [node name="ToDoWithList" type="Control"]
 anchor_right = 1.0
@@ -32,7 +56,7 @@ rect_min_size = Vector2( 400, 750 )
 
 [node name="VCont" type="VBoxContainer" parent="Panel"]
 margin_right = 400.0
-margin_bottom = 396.0
+margin_bottom = 748.0
 rect_min_size = Vector2( 400, 600 )
 
 [node name="BackCont" type="HBoxContainer" parent="Panel/VCont"]
@@ -44,6 +68,7 @@ rect_min_size = Vector2( 400, 80 )
 margin_right = 400.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 400, 80 )
+custom_styles/panel = SubResource( 6 )
 
 [node name="BackButton" type="TouchScreenButton" parent="Panel/VCont/BackCont/Panel"]
 position = Vector2( 86, 81 )
@@ -57,6 +82,7 @@ margin_right = 255.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 100, 40 )
 rect_scale = Vector2( 1.2, 1.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "To Do List"
 align = 1
@@ -72,9 +98,15 @@ rect_min_size = Vector2( 400, 80 )
 margin_right = 310.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 310, 80 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 10 )
 
 [node name="Button" type="TextureButton" parent="Panel/VCont/HCont"]
+modulate = Color( 0.564706, 0.933333, 0.568627, 1 )
+self_modulate = Color( 0.564706, 0.933333, 0.568627, 1 )
 margin_left = 314.0
 margin_right = 394.0
 margin_bottom = 80.0
@@ -86,6 +118,7 @@ margin_top = 168.0
 margin_right = 400.0
 margin_bottom = 208.0
 rect_min_size = Vector2( 400, 40 )
+custom_styles/panel = SubResource( 7 )
 
 [node name="Label" type="Label" parent="Panel/VCont/ToDoLabel"]
 margin_left = 175.0
@@ -93,6 +126,7 @@ margin_top = 19.0
 margin_right = 215.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.3, 1.3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "To Do"
 
 [node name="ToDo" type="ItemList" parent="Panel/VCont"]
@@ -100,22 +134,25 @@ margin_top = 212.0
 margin_right = 400.0
 margin_bottom = 372.0
 rect_min_size = Vector2( 400, 160 )
-custom_colors/guide_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/guide_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_styles/bg = SubResource( 11 )
 
 [node name="DoingLabel" type="Panel" parent="Panel/VCont"]
 margin_top = 376.0
 margin_right = 400.0
 margin_bottom = 396.0
 rect_min_size = Vector2( 400, 20 )
+custom_styles/panel = SubResource( 8 )
 
 [node name="Label2" type="Label" parent="Panel/VCont/DoingLabel"]
 margin_left = 175.0
 margin_right = 215.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.3, 1.3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Doing"
 
 [node name="Doing" type="ItemList" parent="Panel/VCont"]
@@ -123,15 +160,17 @@ margin_top = 400.0
 margin_right = 400.0
 margin_bottom = 560.0
 rect_min_size = Vector2( 400, 160 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
+custom_styles/bg = SubResource( 12 )
 
 [node name="DoneLabel" type="Panel" parent="Panel/VCont"]
 margin_top = 564.0
 margin_right = 400.0
 margin_bottom = 584.0
 rect_min_size = Vector2( 400, 20 )
+custom_styles/panel = SubResource( 9 )
 
 [node name="Label3" type="Label" parent="Panel/VCont/DoneLabel"]
 margin_left = 175.0
@@ -139,6 +178,7 @@ margin_top = 4.0
 margin_right = 215.0
 margin_bottom = 18.0
 rect_scale = Vector2( 1.3, 1.3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Done"
 
 [node name="Done" type="ItemList" parent="Panel/VCont"]
@@ -146,9 +186,10 @@ margin_top = 588.0
 margin_right = 400.0
 margin_bottom = 748.0
 rect_min_size = Vector2( 400, 160 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
+custom_styles/bg = SubResource( 13 )
 
 [node name="ToDoDown" type="TextureButton" parent="."]
 margin_left = 394.0
