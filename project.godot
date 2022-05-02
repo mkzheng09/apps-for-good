@@ -39,6 +39,7 @@ singletons=[  ]
 [global]
 
 emulate=false
+render=false
 
 [input]
 
