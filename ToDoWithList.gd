@@ -123,15 +123,6 @@ func unselect_list():
 func _on_ToDo_nothing_selected():
 	unselect_list()
 
-#changes item color to green if double clicked, and vice versa
-#func _on_ToDo_item_activated(index):
-	#if  $Panel/VCont/ToDo.get_item_metadata(index)["active"] == false:
-		#$Panel/VCont/ToDo.set_item_custom_bg_color(index, Color.darkgreen)
-		#$Panel/VCont/ToDo.set_item_metadata(index, {"active": true})
-	#else:
-		#$Panel/VCont/ToDo.set_item_custom_bg_color(index, Color(0,0,0,0))
-		#$Panel/VCont/ToDo.set_item_metadata(index, {"active": false})
-
 #moves an item into doing from todo when pressed and hides the button
 func _on_ToDoDown_pressed():
 	add_item_doing()
