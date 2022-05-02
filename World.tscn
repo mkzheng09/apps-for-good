@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://UI/HeartUIEmpty.png" type="Texture" id=6]
 [ext_resource path="res://World.gd" type="Script" id=7]
 [ext_resource path="res://Montserrat/static/Montserrat-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Graphics/pixil-layer-Background (2).png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -140,9 +141,8 @@ pressed = ExtResource( 6 )
 
 [node name="Schedule" type="TouchScreenButton" parent="Directory"]
 position = Vector2( 299, 233 )
-scale = Vector2( 6.33333, 7.18182 )
-normal = ExtResource( 5 )
-pressed = ExtResource( 6 )
+scale = Vector2( 2.375, 2.69318 )
+normal = ExtResource( 9 )
 
 [node name="Habits" type="TouchScreenButton" parent="Directory"]
 position = Vector2( 235, 514 )
