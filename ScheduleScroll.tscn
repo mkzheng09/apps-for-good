@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Montserrat/static/Montserrat-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/arrow.png" type="Texture" id=2]
 [ext_resource path="res://ScheduleScroll.gd" type="Script" id=3]
 [ext_resource path="res://Assets/emptySlot.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Add.png" type="Texture" id=5]
+[ext_resource path="res://ResetSchedule.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -383,6 +384,10 @@ rect_min_size = Vector2( 300, 200 )
 dialog_text = "The time frame you entered is invalid, please double check the start and end times!"
 dialog_autowrap = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 86400.0
+script = ExtResource( 6 )
+
 [connection signal="pressed" from="ScrollContainer/VBox/HBox1/Panel/BackB" to="." method="_on_BackB_pressed"]
 [connection signal="text_changed" from="ScrollContainer/VBox/HBox2/ActivityEdit" to="." method="_on_ActivityEdit_text_changed"]
 [connection signal="text_entered" from="ScrollContainer/VBox/HBox2/ActivityEdit" to="." method="_on_ActivityEdit_text_entered"]
@@ -393,3 +398,4 @@ dialog_autowrap = true
 [connection signal="nothing_selected" from="ScrollContainer/VBox/HBox3/VBox2/ItemList" to="." method="_on_ItemList_nothing_selected"]
 [connection signal="confirmed" from="Popup/AlrTaken" to="." method="_on_AlrTaken_confirmed"]
 [connection signal="confirmed" from="Popup/InvalidTime" to="." method="_on_InvalidTime_confirmed"]
+[connection signal="midnight" from="Timer" to="." method="_on_Timer_midnight"]

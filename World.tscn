@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://World.gd" type="Script" id=7]
 [ext_resource path="res://Montserrat/static/Montserrat-Bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Graphics/pixil-layer-Background (2).png" type="Texture" id=9]
+[ext_resource path="res://Graphics/pixil-frame-0 (3).png" type="Texture" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -126,10 +127,10 @@ custom_fonts/font = SubResource( 2 )
 text = "Schedule"
 
 [node name="HabitLabel" type="Label" parent="Directory"]
-margin_left = 224.0
-margin_top = 593.0
-margin_right = 339.0
-margin_bottom = 614.0
+margin_left = 230.0
+margin_top = 508.0
+margin_right = 345.0
+margin_bottom = 529.0
 custom_fonts/font = SubResource( 2 )
 text = "Habit Tracker"
 
@@ -145,10 +146,43 @@ scale = Vector2( 2.375, 2.69318 )
 normal = ExtResource( 9 )
 
 [node name="Habits" type="TouchScreenButton" parent="Directory"]
-position = Vector2( 235, 514 )
+position = Vector2( 237, 419 )
 scale = Vector2( 6.86667, 7.45454 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 6 )
+
+[node name="DPad" type="Node" parent="."]
+
+[node name="Up" type="TouchScreenButton" parent="DPad"]
+position = Vector2( 177, 511 )
+rotation = 1.5708
+scale = Vector2( 2.7, 2.7 )
+normal = ExtResource( 10 )
+passby_press = true
+action = "ui_up"
+
+[node name="Down" type="TouchScreenButton" parent="DPad"]
+position = Vector2( 91, 717 )
+rotation = 4.71239
+scale = Vector2( 2.7, 2.7 )
+normal = ExtResource( 10 )
+passby_press = true
+action = "ui_down"
+
+[node name="Left" type="TouchScreenButton" parent="DPad"]
+position = Vector2( 32, 570 )
+scale = Vector2( 2.7, 2.7 )
+normal = ExtResource( 10 )
+passby_press = true
+action = "ui_left"
+
+[node name="Right" type="TouchScreenButton" parent="DPad"]
+position = Vector2( 236, 657 )
+rotation = 3.14159
+scale = Vector2( 2.7, 2.7 )
+normal = ExtResource( 10 )
+passby_press = true
+action = "ui_right"
 
 [connection signal="pressed" from="Directory/ToDo" to="." method="_on_ToDo_pressed"]
 [connection signal="pressed" from="Directory/Schedule" to="." method="_on_Schedule_pressed"]

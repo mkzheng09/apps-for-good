@@ -25,6 +25,7 @@ var pm1 = false
 var am2 = false
 var pm2 = false
 
+
 func _on_BackB_pressed():
 	get_tree().change_scene("res://World.tscn")
 
@@ -177,3 +178,11 @@ func _on_AlrTaken_confirmed():
 
 func _on_InvalidTime_confirmed():
 	$Popup/InvalidTime.hide()
+
+#resets the schedule at midnight
+func _on_Timer_midnight():
+	var i = 0
+	while i < $ScrollContainer/VBox/HBox3/VBox2/ItemList.get_item_count():
+		$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_icon(i, empty)
+		$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_text(i, "")
+		i = i + 1
