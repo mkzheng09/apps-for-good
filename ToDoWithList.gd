@@ -6,6 +6,7 @@ onready var text2 = preload("res://Assets/trashcantemp.png")
 var is_selected = false
 var item
 
+
 #hides buttons for moving items when scene is run
 func _ready():
 	$ToDoDown.hide()
@@ -148,3 +149,48 @@ func _on_DoneUp_pressed():
 	add_item_doing()
 	remove_selected_items_done()
 	$DoneUp.hide()
+
+func _on_ToDoWithList_tree_exiting():
+	var ToDo = []
+	#var ToDo2 = PoolStringArray(ToDo)
+	for n in range(0,$Panel/VCont/ToDo.get_item_count()):
+		ToDo.insert(n,$Panel/VCont/ToDo.get_item_text(n))
+	var Doing = []
+	#var Doing2 = PoolStringArray(Doing)
+	for n in range(0,$Panel/VCont/Doing.get_item_count()):
+		Doing.insert(n,$Panel/VCont/Doing.get_item_text(n))
+	var Done = []
+	#var Done2 = PoolStringArray(Done)
+	for n in range(0,$Panel/VCont/Done.get_item_count()):
+		Done.insert(n,$Panel/VCont/Done.get_item_text(n))
+	var saveArray2 = [ToDo, Doing, Done]
+	var file = File.new()
+	file.open("user://save_game_list.dat", File.WRITE)
+	file.store_var(saveArray2)
+	file.close()
+
+func _on_ToDoWithList_tree_entered():
+	var file = File.new()
+	file.open("user://save_game_list.dat", File.READ)
+	var content = file.get_var()
+	file.close()
+	print("Test")
+	if content == null:
+		print("Test2")
+		pass 
+	else:
+		print("Test3")
+		var ToDo = content[0]
+		print("Print ToDo: ", ToDo, ToDo.size())
+		var Doing  = content[1]
+		print("Print Doing: ", Doing, Doing.size())
+		var Done  = content[2]
+		print("Print Done: ", Done, Done.size())
+		for n in range(0, ToDo.size()):
+			print("In Loop")
+			print("ToDo[n]", ToDo[n], n)
+			$Panel/VCont/ToDo.add_item(ToDo[n], null, true)
+		for n in range(0, Doing.size()):
+			$Panel/VCont/Doing.add_item(Doing[n], null, true)
+		for n in range(0, Done.size()):
+			$Panel/VCont/Done.add_item(Done[n], null, true)

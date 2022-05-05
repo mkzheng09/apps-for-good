@@ -343,7 +343,6 @@ custom_fonts/font = SubResource( 4 )
 items = [ "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false ]
 
 [node name="Popup" type="Popup" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -388,6 +387,8 @@ dialog_autowrap = true
 wait_time = 86400.0
 script = ExtResource( 6 )
 
+[connection signal="tree_entered" from="." to="." method="_on_Control_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_Control_tree_exiting"]
 [connection signal="pressed" from="ScrollContainer/VBox/HBox1/Panel/BackB" to="." method="_on_BackB_pressed"]
 [connection signal="text_changed" from="ScrollContainer/VBox/HBox2/ActivityEdit" to="." method="_on_ActivityEdit_text_changed"]
 [connection signal="text_entered" from="ScrollContainer/VBox/HBox2/ActivityEdit" to="." method="_on_ActivityEdit_text_entered"]

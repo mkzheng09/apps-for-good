@@ -25,6 +25,8 @@ var pm1 = false
 var am2 = false
 var pm2 = false
 
+var schedule_text = []
+var schedule_icon = []
 
 func _on_BackB_pressed():
 	get_tree().change_scene("res://World.tscn")
@@ -186,3 +188,44 @@ func _on_Timer_midnight():
 		$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_icon(i, empty)
 		$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_text(i, "")
 		i = i + 1
+
+func _on_Control_tree_exiting():	
+	for n in range (0,$ScrollContainer/VBox/HBox3/VBox2/ItemList.get_item_count()):
+		if $ScrollContainer/VBox/HBox3/VBox2/ItemList.get_item_text(n).empty():
+			schedule_text.insert(n, "null")
+		else:
+			schedule_text.insert(n, $ScrollContainer/VBox/HBox3/VBox2/ItemList.get_item_text(n))
+	
+	#print(schedule_text)
+	var file = File.new()
+	file.open("user://save_game_schedule.dat", File.WRITE)
+	file.store_var(schedule_text)
+	file.close()
+
+func _on_Control_tree_entered():
+	var emptyicon = load("res://Assets/emptySlot.png")
+	var takenicon = load("res://Assets/takenSlot.png")
+	
+	var file = File.new()
+	file.open("user://save_game_schedule.dat", File.READ)
+	var content = file.get_var()
+	file.close()
+	print("Test")
+	if content == null:
+		print("Test2")
+		pass 
+	else:
+		#print("Print events: ", texts, texts.size())
+		#var icons  = content[1]
+		#print("Print icons: ", icons, icons.size())
+		
+		for n in range(0, content.size()):
+			#print("In Loop")  
+			if content[n] == "null":
+				$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_icon(n, emptyicon)
+				$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_text(n, "")
+			else:
+				$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_text(n, content[n])
+				$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_icon(n, takenicon)
+		
+

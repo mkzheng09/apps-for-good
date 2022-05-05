@@ -228,6 +228,8 @@ rect_rotation = -90.0
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 2 )
 
+[connection signal="tree_entered" from="." to="." method="_on_ToDoWithList_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_ToDoWithList_tree_exiting"]
 [connection signal="pressed" from="Panel/VCont/BackCont/Panel/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="text_changed" from="Panel/VCont/HCont/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="Panel/VCont/HCont/LineEdit" to="." method="_on_LineEdit_text_entered"]

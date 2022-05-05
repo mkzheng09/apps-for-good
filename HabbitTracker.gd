@@ -47,3 +47,11 @@ func _on_HabbitTracker_tree_entered():
 		$Sleep/HSlider.value = int(content[2])
 		$DailyHomework/HSlider.value = int(content[3])
 		$Chores/HSlider.value = int(content[4])
+
+
+func _on_Timer_habitreset():
+	$Water/HSlider.value = 0
+	$Exercise/HSlider.value = 0
+	$Sleep/HSlider.value = 0
+	$DailyHomework/HSlider.value = 0
+	$Chores/HSlider.value = 0
