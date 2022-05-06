@@ -7,17 +7,15 @@
 [ext_resource path="res://Graphics/pixil-frame-0 (2).png" type="Texture" id=5]
 [ext_resource path="res://addons/SliderLabel/SliderLabel.gd" type="Script" id=6]
 [ext_resource path="res://HabitReset.gd" type="Script" id=7]
+[ext_resource path="res://Theme1.tres" type="Theme" id=8]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
-
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
 
 [node name="HabbitTracker" type="Node2D"]
@@ -26,13 +24,14 @@ script = ExtResource( 1 )
 [node name="Background" type="Panel" parent="."]
 margin_right = 400.0
 margin_bottom = 752.0
+theme = ExtResource( 8 )
 custom_styles/panel = SubResource( 4 )
 
 [node name="Header" type="Panel" parent="."]
 margin_right = 400.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 400, 80 )
-custom_styles/panel = SubResource( 2 )
+theme = ExtResource( 8 )
 
 [node name="BackButton" type="TouchScreenButton" parent="Header"]
 position = Vector2( 13, 8 )
@@ -58,12 +57,14 @@ anchor_bottom = 1.0
 margin_top = 88.0
 margin_right = 400.0
 margin_bottom = 752.0
-custom_styles/panel = SubResource( 1 )
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 5 )
 
 [node name="Water" type="Control" parent="."]
 margin_top = 120.0
 margin_right = 256.0
 margin_bottom = 152.0
+theme = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Water"]
 position = Vector2( 56, 6 )
@@ -104,6 +105,7 @@ text = "Water (Cups)"
 margin_top = 192.0
 margin_right = 256.0
 margin_bottom = 224.0
+theme = ExtResource( 8 )
 
 [node name="HSlider" type="HSlider" parent="Exercise"]
 margin_left = 128.0
@@ -146,6 +148,7 @@ texture = ExtResource( 5 )
 margin_top = 248.0
 margin_right = 256.0
 margin_bottom = 280.0
+theme = ExtResource( 8 )
 
 [node name="HSlider" type="HSlider" parent="Sleep"]
 margin_left = 128.0
@@ -184,6 +187,7 @@ text = "Sleep (Hours)"
 margin_top = 320.0
 margin_right = 256.0
 margin_bottom = 352.0
+theme = ExtResource( 8 )
 
 [node name="HSlider" type="HSlider" parent="DailyHomework"]
 margin_left = 128.0
@@ -218,6 +222,7 @@ text = "Homework (%)"
 margin_top = 384.0
 margin_right = 256.0
 margin_bottom = 416.0
+theme = ExtResource( 8 )
 
 [node name="HSlider" type="HSlider" parent="Chores"]
 margin_left = 128.0

@@ -1,0 +1,70 @@
+[gd_resource type="Theme" load_steps=14 format=2]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.572549, 0.87451, 0.952941, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.564706, 0.933333, 0.568627, 1 )
+
+[resource]
+ItemList/colors/font_color = Color( 0, 0, 0, 1 )
+ItemList/colors/font_color_selected = Color( 0, 0, 0, 1 )
+ItemList/colors/guide_color = Color( 0, 0, 0, 1 )
+ItemList/styles/bg = SubResource( 5 )
+ItemList/styles/bg_focus = SubResource( 14 )
+ItemList/styles/cursor = SubResource( 11 )
+ItemList/styles/cursor_unfocused = SubResource( 15 )
+ItemList/styles/selected = SubResource( 16 )
+ItemList/styles/selected_focus = SubResource( 17 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/cursor_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
+LineEdit/styles/normal = SubResource( 7 )
+OptionButton/colors/font_color = Color( 0, 0, 0, 1 )
+OptionButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+OptionButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+OptionButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+OptionButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+OptionButton/constants/arrow_margin = 2
+OptionButton/constants/hseparation = 2
+OptionButton/fonts/font = null
+OptionButton/styles/disabled = null
+OptionButton/styles/focus = SubResource( 12 )
+OptionButton/styles/hover = SubResource( 8 )
+OptionButton/styles/normal = SubResource( 9 )
+OptionButton/styles/pressed = SubResource( 10 )
+Panel/styles/panel = SubResource( 4 )
+PopupDialog/styles/panel = SubResource( 13 )
