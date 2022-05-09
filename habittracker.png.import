@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plusbutton.png-593e941671b87f00d68841b2c9f6d850.stex"
+path="res://.import/habittracker.png-a20e0e062314e801370ec11a127b54b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plusbutton.png"
-dest_files=[ "res://.import/plusbutton.png-593e941671b87f00d68841b2c9f6d850.stex" ]
+source_file="res://habittracker.png"
+dest_files=[ "res://.import/habittracker.png-a20e0e062314e801370ec11a127b54b0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -1,13 +1,16 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://HabbitTracker.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/pixil-layer-Background.png" type="Texture" id=2]
 [ext_resource path="res://Montserrat/static/Montserrat-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Graphics/pixil-frame-0 (3).png" type="Texture" id=4]
-[ext_resource path="res://Graphics/pixil-frame-0 (2).png" type="Texture" id=5]
+[ext_resource path="res://sleep.png" type="Texture" id=5]
 [ext_resource path="res://addons/SliderLabel/SliderLabel.gd" type="Script" id=6]
 [ext_resource path="res://HabitReset.gd" type="Script" id=7]
 [ext_resource path="res://Theme1.tres" type="Theme" id=8]
+[ext_resource path="res://soap.png" type="Texture" id=9]
+[ext_resource path="res://pixil-frame-0 (2).png" type="Texture" id=10]
+[ext_resource path="res://exercise.png" type="Texture" id=11]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 1 )
@@ -95,9 +98,9 @@ placement = 1
 
 [node name="Label" type="Label" parent="Water"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 34.0
 margin_right = 104.0
-margin_bottom = 54.0
+margin_bottom = 48.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Water (Cups)"
 
@@ -133,16 +136,16 @@ placement = 1
 
 [node name="Label" type="Label" parent="Exercise"]
 margin_left = 10.0
-margin_top = 32.0
+margin_top = 22.0
 margin_right = 103.0
-margin_bottom = 46.0
+margin_bottom = 36.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Exercise (Min.)"
 
 [node name="Sprite" type="Sprite" parent="Exercise"]
-position = Vector2( 56, 71 )
+position = Vector2( 55, 6 )
 scale = Vector2( 1.9375, 1.9375 )
-texture = ExtResource( 5 )
+texture = ExtResource( 11 )
 
 [node name="Sleep" type="Control" parent="."]
 margin_top = 248.0
@@ -177,11 +180,16 @@ placement = 1
 
 [node name="Label" type="Label" parent="Sleep"]
 margin_left = 14.0
-margin_top = 41.0
+margin_top = 38.0
 margin_right = 102.0
-margin_bottom = 55.0
+margin_bottom = 52.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sleep (Hours)"
+
+[node name="Sprite" type="Sprite" parent="Sleep"]
+position = Vector2( 56, 14 )
+scale = Vector2( 2.1875, 2.1875 )
+texture = ExtResource( 5 )
 
 [node name="DailyHomework" type="Control" parent="."]
 margin_top = 320.0
@@ -212,11 +220,17 @@ visibility_rule = 3
 placement = 1
 
 [node name="Label" type="Label" parent="DailyHomework"]
-margin_left = 8.0
-margin_right = 96.0
-margin_bottom = 14.0
+margin_left = 13.0
+margin_top = 25.0
+margin_right = 106.0
+margin_bottom = 39.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Homework (%)"
+
+[node name="Sprite" type="Sprite" parent="DailyHomework/Label"]
+position = Vector2( 48, -18 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
 
 [node name="Chores" type="Control" parent="."]
 margin_top = 384.0
@@ -247,11 +261,17 @@ visibility_rule = 3
 placement = 1
 
 [node name="Label" type="Label" parent="Chores"]
-margin_left = 8.0
-margin_right = 96.0
-margin_bottom = 14.0
+margin_left = 22.0
+margin_top = 24.0
+margin_right = 110.0
+margin_bottom = 38.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Chores (%)"
+
+[node name="Sprite" type="Sprite" parent="Chores"]
+position = Vector2( 56, -3 )
+scale = Vector2( 1.98437, 1.98438 )
+texture = ExtResource( 9 )
 
 [node name="Timer" type="Timer" parent="."]
 script = ExtResource( 7 )
