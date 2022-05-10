@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pet.png-a7056a541c164cc87164e9184180bc09.stex"
+path="res://.import/calendar.png-52a680e044bdb8603fe348d02c15e9c4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pet.png"
-dest_files=[ "res://.import/pet.png-a7056a541c164cc87164e9184180bc09.stex" ]
+source_file="res://calendar.png"
+dest_files=[ "res://.import/calendar.png-52a680e044bdb8603fe348d02c15e9c4.stex" ]
 
 [params]
 
