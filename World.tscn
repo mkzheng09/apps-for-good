@@ -96,10 +96,10 @@ custom_fonts/font = SubResource( 2 )
 text = "Habit Tracker"
 
 [node name="HelpLabel" type="Label" parent="Directory"]
-margin_left = 281.0
-margin_top = 268.0
-margin_right = 372.0
-margin_bottom = 289.0
+margin_left = 283.0
+margin_top = 266.0
+margin_right = 374.0
+margin_bottom = 287.0
 custom_fonts/font = SubResource( 3 )
 text = "Help Menu"
 
@@ -119,7 +119,7 @@ scale = Vector2( 5.5625, 6.03872 )
 normal = ExtResource( 11 )
 
 [node name="HelpMenu" type="TouchScreenButton" parent="Directory"]
-position = Vector2( 292, 203 )
+position = Vector2( 294, 199 )
 scale = Vector2( 2.1875, 2.06997 )
 normal = ExtResource( 15 )
 

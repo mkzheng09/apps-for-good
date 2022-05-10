@@ -1,27 +1,10 @@
 extends Node2D
 
-#var x = 100
-#var y = 150
-
-#onready var node = get_node("PopupScene")
-
-#func _on_TouchScreenButton_pressed():
-	#var habit 
-	
-	#while habit == null:
-	#	habit = node.createPopup()
-	#if habit != null:
-	#	var label = $Object/Label
-	#	label.text = habit
-	#var new_slider = load("res://Object.tscn")
-	#var slider = new_slider.instance()
-	#slider.set_position(Vector2(x,y))
-	#y = y + 100
-	#get_node("Sliders").add_child(slider)
-	
+#changes to home screen when back button pressed
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://World.tscn")
 
+#saves slider number when tree is exited (save game)
 func _on_HabbitTracker_tree_exiting():
 	var water = $Water/HSlider.value
 	var exercise = $Exercise/HSlider.value
@@ -34,6 +17,7 @@ func _on_HabbitTracker_tree_exiting():
 	file.store_var(saveArray)
 	file.close()
 
+#reloads slider data when it is entered
 func _on_HabbitTracker_tree_entered():
 	var file = File.new()
 	file.open("user://save_game.dat", File.READ)
@@ -48,7 +32,7 @@ func _on_HabbitTracker_tree_entered():
 		$DailyHomework/HSlider.value = int(content[3])
 		$Chores/HSlider.value = int(content[4])
 
-
+#resets sliders at midnight for new day
 func _on_Timer_habitreset():
 	$Water/HSlider.value = 0
 	$Exercise/HSlider.value = 0

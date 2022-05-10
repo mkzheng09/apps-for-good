@@ -1,12 +1,15 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Montserrat/static/Montserrat-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/arrow.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/pixil-frame-0 (3).png" type="Texture" id=2]
 [ext_resource path="res://ScheduleScroll.gd" type="Script" id=3]
 [ext_resource path="res://Assets/emptySlot.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Add.png" type="Texture" id=5]
+[ext_resource path="res://PlusButton.png" type="Texture" id=5]
 [ext_resource path="res://ResetSchedule.gd" type="Script" id=6]
 [ext_resource path="res://Theme1.tres" type="Theme" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.909804, 0.956863, 1, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -42,6 +45,7 @@ script = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 380, 750 )
+custom_styles/bg = SubResource( 8 )
 scroll_horizontal_enabled = false
 
 [node name="VBox" type="VBoxContainer" parent="ScrollContainer"]
@@ -69,8 +73,8 @@ text = "    Schedule    "
 align = 1
 
 [node name="BackB" type="TouchScreenButton" parent="ScrollContainer/VBox/HBox1/Panel"]
-position = Vector2( 90, 92 )
-rotation = -3.14159
+position = Vector2( 15, 16 )
+scale = Vector2( 2, 2 )
 normal = ExtResource( 2 )
 
 [node name="HBox2" type="HBoxContainer" parent="ScrollContainer/VBox"]
@@ -89,7 +93,9 @@ rect_min_size = Vector2( 280, 80 )
 margin_left = 297.0
 margin_right = 377.0
 margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
 texture_normal = ExtResource( 5 )
+expand = true
 
 [node name="HBox4" type="HBoxContainer" parent="ScrollContainer/VBox"]
 margin_top = 188.0
@@ -390,6 +396,7 @@ margin_top = -100.0
 margin_right = 150.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 300, 200 )
+theme = ExtResource( 7 )
 dialog_text = "The time frame you entered is invalid, please double check the start and end times!"
 dialog_autowrap = true
 

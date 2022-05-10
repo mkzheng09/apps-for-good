@@ -1,8 +1,10 @@
 extends Control
 
-onready var text1 = preload("res://Assets/Add.png")
+#loads button textures
+onready var text1 = preload("res://PlusButton.png")
 onready var text2 = preload("res://Assets/trashcantemp.png")
 
+#loads icons for taken vs empty slots
 onready var taken = preload("res://Assets/takenSlot.png")
 onready var empty = preload("res://Assets/emptySlot.png")
 
@@ -28,6 +30,7 @@ var pm2 = false
 var schedule_text = []
 var schedule_icon = []
 
+#back button code
 func _on_BackB_pressed():
 	get_tree().change_scene("res://World.tscn")
 
@@ -45,6 +48,7 @@ func _on_Add_pressed():
 	elif is_selected:
 		remove_selected_items()
 
+#Removes item from schedule
 func remove_selected_items():
 	var it = $ScrollContainer/VBox/HBox3/VBox2/ItemList.get_selected_items()[0]
 	$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_icon(it, empty)
@@ -52,12 +56,14 @@ func remove_selected_items():
 	is_selected = false
 	check_button()
 
+#changes button texture from add to trash and back
 func check_button():
 	if is_selected:
 		$ScrollContainer/VBox/HBox2/Add.texture_normal = text2
 	else:
 		$ScrollContainer/VBox/HBox2/Add.texture_normal = text1
 
+#adds an event into schedule, called when button pressed
 func add_event():
 	activity = $ScrollContainer/VBox/HBox2/ActivityEdit.text
 	start =  int($ScrollContainer/VBox/HBox4/StartTimeEdit.text)
@@ -153,13 +159,17 @@ func _on_AMPM2_item_selected(index):
 		am2 = false
 		print("PM")
 
+
+#button stuff
 func _on_ActivityEdit_text_entered(new_text):
 	_on_Add_pressed()
 
+#unselects list when activity edit box text is changed
 func _on_ActivityEdit_text_changed(new_text):
 	if $ScrollContainer/VBox/HBox3/VBox2/ItemList.is_anything_selected():
 		unselect_list()
 
+#checks button when an item is selected
 func _on_ItemList_item_selected(index):
 	if $ScrollContainer/VBox/HBox3/VBox2/ItemList.get_item_text(index).empty():
 		return
@@ -167,17 +177,21 @@ func _on_ItemList_item_selected(index):
 		is_selected = true
 		check_button()
 
+#unselects list when itemslist is unselected/not selected
 func _on_ItemList_nothing_selected():
 	unselect_list()
 
+#unselect list function
 func unselect_list():
 	is_selected = false
 	$ScrollContainer/VBox/HBox3/VBox2/ItemList.unselect_all()
 	check_button()
 
+#hides popup warning when acknowledgement is pressed
 func _on_AlrTaken_confirmed():
 	$Popup/AlrTaken.hide()
 
+#hides popup warning when acknowledgement is pressed
 func _on_InvalidTime_confirmed():
 	$Popup/InvalidTime.hide()
 
@@ -189,6 +203,7 @@ func _on_Timer_midnight():
 		$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_text(i, "")
 		i = i + 1
 
+#stores schedule data when scene is exited
 func _on_Control_tree_exiting():	
 	for n in range (0,$ScrollContainer/VBox/HBox3/VBox2/ItemList.get_item_count()):
 		if $ScrollContainer/VBox/HBox3/VBox2/ItemList.get_item_text(n).empty():
@@ -202,6 +217,7 @@ func _on_Control_tree_exiting():
 	file.store_var(schedule_text)
 	file.close()
 
+# loads up data into schedule when scene is entered
 func _on_Control_tree_entered():
 	var emptyicon = load("res://Assets/emptySlot.png")
 	var takenicon = load("res://Assets/takenSlot.png")
@@ -215,9 +231,6 @@ func _on_Control_tree_entered():
 		print("Test2")
 		pass 
 	else:
-		#print("Print events: ", texts, texts.size())
-		#var icons  = content[1]
-		#print("Print icons: ", icons, icons.size())
 		
 		for n in range(0, content.size()):
 			#print("In Loop")  

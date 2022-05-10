@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Montserrat/static/Montserrat-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/arrow.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Add.png" type="Texture" id=3]
+[ext_resource path="res://PlusButton.png" type="Texture" id=2]
 [ext_resource path="res://ToDoWithList.gd" type="Script" id=4]
 [ext_resource path="res://Theme1.tres" type="Theme" id=5]
+[ext_resource path="res://Graphics/pixil-frame-0 (3).png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -46,9 +46,9 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 400, 80 )
 
 [node name="BackButton" type="TouchScreenButton" parent="Panel/VCont/BackCont/Panel"]
-position = Vector2( 86, 81 )
-rotation = 3.14159
-normal = ExtResource( 2 )
+position = Vector2( 16, 6 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="Panel/VCont/BackCont/Panel"]
 margin_left = 155.0
@@ -79,13 +79,12 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 
 [node name="Button" type="TextureButton" parent="Panel/VCont/HCont"]
-modulate = Color( 0.564706, 0.933333, 0.568627, 1 )
-self_modulate = Color( 0.564706, 0.933333, 0.568627, 1 )
 margin_left = 314.0
 margin_right = 394.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 2 )
+expand = true
 
 [node name="ToDoLabel" type="Panel" parent="Panel/VCont"]
 margin_top = 168.0
@@ -154,41 +153,41 @@ margin_bottom = 748.0
 rect_min_size = Vector2( 400, 160 )
 
 [node name="ToDoDown" type="TextureButton" parent="."]
-margin_left = 394.0
-margin_top = 259.0
-margin_right = 474.0
-margin_bottom = 339.0
-rect_rotation = 90.0
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 2 )
+margin_left = 326.0
+margin_top = 320.0
+margin_right = 358.0
+margin_bottom = 352.0
+rect_rotation = 270.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 6 )
 
 [node name="DoingUp" type="TextureButton" parent="."]
-margin_left = 330.0
-margin_top = 478.0
-margin_right = 410.0
-margin_bottom = 558.0
-rect_rotation = 270.0
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 2 )
+margin_left = 394.0
+margin_top = 416.0
+margin_right = 426.0
+margin_bottom = 448.0
+rect_rotation = 90.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 6 )
 flip_v = true
 
 [node name="DoingDown" type="TextureButton" parent="."]
-margin_left = 394.0
-margin_top = 483.0
-margin_right = 474.0
-margin_bottom = 563.0
-rect_rotation = 90.0
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 2 )
+margin_left = 330.0
+margin_top = 549.0
+margin_right = 362.0
+margin_bottom = 581.0
+rect_rotation = 270.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 6 )
 
 [node name="DoneUp" type="TextureButton" parent="."]
-margin_left = 330.0
-margin_top = 700.0
-margin_right = 410.0
-margin_bottom = 780.0
-rect_rotation = -90.0
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 2 )
+margin_left = 394.0
+margin_top = 638.0
+margin_right = 426.0
+margin_bottom = 670.0
+rect_rotation = 90.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 6 )
 
 [connection signal="tree_entered" from="." to="." method="_on_ToDoWithList_tree_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_ToDoWithList_tree_exiting"]

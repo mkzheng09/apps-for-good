@@ -1,8 +1,10 @@
 extends Control
 
-onready var text1 = preload("res://Assets/Add.png")
+#loads up icons for buttons
+onready var text1 = preload("res://PlusButton.png")
 onready var text2 = preload("res://Assets/trashcantemp.png")
 
+#variables
 var is_selected = false
 var item
 
@@ -18,7 +20,7 @@ func _ready():
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://World.tscn")
 
-#adds item when there is text in the lineeditor and removes when there isnt and 
+#adds item when there is text in the line editor and removes when there isnt and 
 #an item in the list is selected
 func _on_Button_pressed():
 	if $Panel/VCont/HCont/LineEdit.text and not is_selected:
@@ -85,7 +87,7 @@ func check_button():
 func _on_LineEdit_text_entered(new_text):
 	_on_Button_pressed()
 
-#changes button texture when an item is selected
+#changes button texture when an item is selected on todo list
 func _on_ToDo_item_selected(index):
 	item = $Panel/VCont/ToDo.get_item_text(index)
 	is_selected = true
@@ -150,6 +152,7 @@ func _on_DoneUp_pressed():
 	remove_selected_items_done()
 	$DoneUp.hide()
 
+#stores data in save frle from lists when back button is pressed
 func _on_ToDoWithList_tree_exiting():
 	var ToDo = []
 	#var ToDo2 = PoolStringArray(ToDo)
@@ -169,6 +172,7 @@ func _on_ToDoWithList_tree_exiting():
 	file.store_var(saveArray2)
 	file.close()
 
+#loads data from save file into lists when scene is entered
 func _on_ToDoWithList_tree_entered():
 	var file = File.new()
 	file.open("user://save_game_list.dat", File.READ)
