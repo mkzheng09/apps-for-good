@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Theme1.tres" type="Theme" id=1]
+[ext_resource path="res://Graphics/pixil-frame-0 (3).png" type="Texture" id=2]
+[ext_resource path="res://HelpMenu.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
+
+[node name="Help Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -684.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Header" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1.0
+margin_bottom = 22.0
+
+[node name="Label" type="Label" parent="Header"]
+margin_left = 157.0
+margin_top = 35.0
+margin_right = 227.0
+margin_bottom = 54.0
+text = "Help Menu"
+
+[node name="Body" type="Panel" parent="."]
+margin_top = 97.0
+margin_right = 400.0
+margin_bottom = 750.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Body"]
+margin_left = 24.0
+margin_top = 17.0
+margin_right = 400.0
+margin_bottom = 66.0
+text = "About:
+- Habbitat is a planning and habit tracker specially
+ designed for younger audiences
+
+- Features include:
+   - a To-Do list which allows users to add tasks to be
+     completed and seperate them into \"To do,\" \"Doing,\"
+	     and \"Done\" sections
+		 
+		  - a Schedule Builder which allows users to construct a 
+		     daily schedule with tasks set at different times
+			 
+			  - a Habit Tracker which allows users to track the 
+			     daily completion of several pre-built-in habits"
+
+[node name="Label2" type="Label" parent="Body"]
+margin_left = 24.0
+margin_top = 276.0
+margin_right = 391.0
+margin_bottom = 443.0
+text = "Tips and Tricks:
+- Once a task is created in the To-do list, it can be moved
+   between the \"To Do,\" \"Doing,\" and \"Done\" columns 
+   using the arrows or deleted using the trashcan icon
+
+- The Schedule Builder requires each event to have a set 
+  time (between 6AM and 11PM) and individual events 
+  can be deleted using the trashcan icon
+
+- The Habit Tracker contains sliders to track the daily
+  completion of several pre-built habits
+
+- All data is reset on a daily basis"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( 14, 18 )
+scale = Vector2( 2.03125, 1.53125 )
+normal = ExtResource( 2 )
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

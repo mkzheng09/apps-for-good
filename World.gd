@@ -8,3 +8,7 @@ func _on_Schedule_pressed():
 
 func _on_Habits_pressed():
 	get_tree().change_scene("res://HabbitTracker.tscn")
+
+
+func _on_HelpMenu_pressed():
+	get_tree().change_scene("res://HelpMenu.tscn")
