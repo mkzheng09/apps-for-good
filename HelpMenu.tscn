@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Theme1.tres" type="Theme" id=1]
 [ext_resource path="res://Graphics/pixil-frame-0 (3).png" type="Texture" id=2]
 [ext_resource path="res://HelpMenu.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.733333, 0.933333, 0.756863, 1 )
@@ -13,6 +16,12 @@ anchor_bottom = 1.0
 margin_bottom = -684.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 684.0
+custom_styles/panel = SubResource( 2 )
 
 [node name="Header" type="Panel" parent="."]
 anchor_right = 1.0

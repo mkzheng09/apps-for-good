@@ -152,7 +152,7 @@ func _on_DoneUp_pressed():
 	remove_selected_items_done()
 	$DoneUp.hide()
 
-#stores data in save frle from lists when back button is pressed
+#stores data in save file from lists when back button is pressed
 func _on_ToDoWithList_tree_exiting():
 	var ToDo = []
 	#var ToDo2 = PoolStringArray(ToDo)

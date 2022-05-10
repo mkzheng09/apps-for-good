@@ -1,6 +1,6 @@
 extends Node2D
 
-#changes to home screen when back button pressed
+#changes to home screen when back button is pressed
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://World.tscn")
 
