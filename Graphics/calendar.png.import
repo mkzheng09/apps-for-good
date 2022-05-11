@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Question.png-e064e6c46f7ce1ee107204d81e815ee5.stex"
+path="res://.import/calendar.png-0457dc62e08deb0ed161b9ef819fb3f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Question.png"
-dest_files=[ "res://.import/Question.png-e064e6c46f7ce1ee107204d81e815ee5.stex" ]
+source_file="res://Graphics/calendar.png"
+dest_files=[ "res://.import/calendar.png-0457dc62e08deb0ed161b9ef819fb3f4.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

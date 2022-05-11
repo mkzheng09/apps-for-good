@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall (2).png-5abea7df79ebfe7c029fd970e1580abf.stex"
+path="res://.import/pencil.png-0b855f0367ed1d3ea5f5736e604a7552.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wall (2).png"
-dest_files=[ "res://.import/wall (2).png-5abea7df79ebfe7c029fd970e1580abf.stex" ]
+source_file="res://Graphics/pencil.png"
+dest_files=[ "res://.import/pencil.png-0b855f0367ed1d3ea5f5736e604a7552.stex" ]
 
 [params]
 

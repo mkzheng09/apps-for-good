@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/trash.png-e99864321b62ad01d5ebe5582c21f0f9.stex"
+path="res://.import/exercise.png-dd4f7f845ed1766907d29e55c6c5039e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trash.png"
-dest_files=[ "res://.import/trash.png-e99864321b62ad01d5ebe5582c21f0f9.stex" ]
+source_file="res://Graphics/exercise.png"
+dest_files=[ "res://.import/exercise.png-dd4f7f845ed1766907d29e55c6c5039e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

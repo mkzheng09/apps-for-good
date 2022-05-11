@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bigger.png-c670353fd42a29a5e38956a76c4d60a1.stex"
+path="res://.import/carpet.png-4abfeb90e3c8adca440ea85c9968c7cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bigger.png"
-dest_files=[ "res://.import/bigger.png-c670353fd42a29a5e38956a76c4d60a1.stex" ]
+source_file="res://Graphics/carpet.png"
+dest_files=[ "res://.import/carpet.png-4abfeb90e3c8adca440ea85c9968c7cc.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=false
+flags/repeat=0
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

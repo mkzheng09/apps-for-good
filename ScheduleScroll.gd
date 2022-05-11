@@ -1,7 +1,7 @@
 extends Control
 
 #loads button textures
-onready var text1 = preload("res://PlusButton.png")
+onready var text1 = preload("res://Graphics/PlusButton.png")
 onready var text2 = preload("res://Assets/trashcantemp.png")
 
 #loads icons for taken vs empty slots
