@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sleep.png-7133b9f971a26ff3f7449a84880da74c.stex"
+path="res://.import/Question.png-10593ab5fb5a61617c561cd28edc2619.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sleep.png"
-dest_files=[ "res://.import/sleep.png-7133b9f971a26ff3f7449a84880da74c.stex" ]
+source_file="res://Graphics/Question.png"
+dest_files=[ "res://.import/Question.png-10593ab5fb5a61617c561cd28edc2619.stex" ]
 
 [params]
 

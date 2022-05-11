@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backarrow.png-72b763e0ea38c0c428aba95117397687.stex"
+path="res://.import/trash.png-346dd85f9fbe97cc6536310137a9fab2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backarrow.png"
-dest_files=[ "res://.import/backarrow.png-72b763e0ea38c0c428aba95117397687.stex" ]
+source_file="res://Graphics/trash.png"
+dest_files=[ "res://.import/trash.png-346dd85f9fbe97cc6536310137a9fab2.stex" ]
 
 [params]
 

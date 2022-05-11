@@ -1,7 +1,7 @@
 extends Control
 
 #loads up icons for buttons
-onready var text1 = preload("res://PlusButton.png")
+onready var text1 = preload("res://Graphics/PlusButton.png")
 onready var text2 = preload("res://Assets/trashcantemp.png")
 
 #variables
@@ -84,8 +84,10 @@ func check_button():
 	else:
 		$Panel/VCont/HCont/Button.texture_normal = text1
 
+#when text is entered into the line edit, checks button status
 func _on_LineEdit_text_entered(new_text):
 	_on_Button_pressed()
+
 
 #changes button texture when an item is selected on todo list
 func _on_ToDo_item_selected(index):
@@ -114,18 +116,46 @@ func _on_Done_item_selected(index):
 #unselects list when new text is entered into the line editor
 func _on_LineEdit_text_changed(new_text):
 	if $Panel/VCont/ToDo.is_anything_selected():
-		unselect_list()
+		unselect_list_todo()
+	if $Panel/VCont/Doing.is_anything_selected():
+		unselect_list_doing()
+	if $Panel/VCont/Done.is_anything_selected():
+		unselect_list_done()
 
 #unselects list
-func unselect_list():
+func unselect_list_todo():
 	is_selected = false
 	$Panel/VCont/ToDo.unselect_all()
 	check_button()
 
+func unselect_list_doing():
+	is_selected = false
+	$Panel/VCont/Doing.unselect_all()
+	check_button()
+
+func unselect_list_done():
+	is_selected = false
+	$Panel/VCont/Done.unselect_all()
+	check_button()
+
 #unselects list when nothing is selected
 func _on_ToDo_nothing_selected():
-	unselect_list()
+	unselect_list_todo()
+	$ToDoDown.hide()
 
+
+#unselects list when nothing is selected
+func _on_Doing_nothing_selected():
+	unselect_list_doing()
+	$DoingDown.hide()
+	$DoingUp.hide()
+
+
+#unselects list when nothing is selected
+func _on_Done_nothing_selected():
+	unselect_list_done()
+	$DoneUp.hide()
+	
 #moves an item into doing from todo when pressed and hides the button
 func _on_ToDoDown_pressed():
 	add_item_doing()
@@ -198,3 +228,13 @@ func _on_ToDoWithList_tree_entered():
 			$Panel/VCont/Doing.add_item(Doing[n], null, true)
 		for n in range(0, Done.size()):
 			$Panel/VCont/Done.add_item(Done[n], null, true)
+
+#unselects lists and hides buttons when line editor is entered
+func _on_LineEdit_focus_entered():
+	unselect_list_todo()
+	unselect_list_doing()
+	unselect_list_done()
+	$ToDoDown.hide()
+	$DoingDown.hide()
+	$DoingUp.hide()
+	$DoneUp.hide()

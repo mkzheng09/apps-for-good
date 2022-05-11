@@ -1,32 +1,39 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://plant.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/plant.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://bigger.png" type="Texture" id=3]
-[ext_resource path="res://couch.png" type="Texture" id=4]
-[ext_resource path="res://clock.png" type="Texture" id=5]
-[ext_resource path="res://calendar.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/bigger.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/couch.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/clock.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/calendar.png" type="Texture" id=6]
 [ext_resource path="res://World.gd" type="Script" id=7]
 [ext_resource path="res://Montserrat/static/Montserrat-Bold.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://coffeecup.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/coffeecup.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/pixil-frame-0 (3).png" type="Texture" id=10]
 [ext_resource path="res://habittracker.png" type="Texture" id=11]
-[ext_resource path="res://wall (2).png" type="Texture" id=12]
-[ext_resource path="res://pet.png" type="Texture" id=13]
-[ext_resource path="res://coffe.png" type="Texture" id=14]
-[ext_resource path="res://Question.png" type="Texture" id=15]
-
-[sub_resource type="GDScript" id=4]
-script/source = "extends Sprite
-
-
-"
+[ext_resource path="res://Graphics/wall (2).png" type="Texture" id=12]
+[ext_resource path="res://Graphics/pet.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/coffe.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Question.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 8 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 46.0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 35.5, 31 )
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 33.0
+height = 60.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 29.1548
 
 [node name="World" type="Node2D"]
 script = ExtResource( 7 )
@@ -55,11 +62,10 @@ position = Vector2( 70, 399 )
 scale = Vector2( 4, 4 )
 
 [node name="Pet" type="Sprite" parent="YSort/Player"]
-position = Vector2( 12, 3.75 )
+position = Vector2( 13, 5.5 )
 texture = ExtResource( 13 )
 hframes = 4
 frame = 1
-script = SubResource( 4 )
 
 [node name="Couch" type="Sprite" parent="YSort"]
 position = Vector2( 120, 100 )
@@ -79,56 +85,82 @@ texture = ExtResource( 1 )
 [node name="Directory" type="Node" parent="."]
 
 [node name="ToDoLabel" type="Label" parent="Directory"]
-margin_left = 283.0
-margin_top = 560.0
-margin_right = 366.0
-margin_bottom = 581.0
+margin_left = 281.0
+margin_top = 498.0
+margin_right = 364.0
+margin_bottom = 519.0
 custom_fonts/font = SubResource( 2 )
 text = "To-do List"
 
 [node name="ScheduleLabel" type="Label" parent="Directory"]
-margin_left = 282.0
-margin_top = 423.0
-margin_right = 365.0
-margin_bottom = 444.0
+margin_left = 289.0
+margin_top = 370.0
+margin_right = 372.0
+margin_bottom = 391.0
 custom_fonts/font = SubResource( 2 )
 text = "Schedule"
 
 [node name="HabitLabel" type="Label" parent="Directory"]
 margin_left = 269.0
-margin_top = 671.0
+margin_top = 627.0
 margin_right = 384.0
-margin_bottom = 692.0
+margin_bottom = 648.0
 custom_fonts/font = SubResource( 2 )
 text = "Habit Tracker"
 
 [node name="HelpLabel" type="Label" parent="Directory"]
-margin_left = 278.0
-margin_top = 303.0
-margin_right = 369.0
-margin_bottom = 324.0
+margin_left = 283.0
+margin_top = 266.0
+margin_right = 374.0
+margin_bottom = 287.0
 custom_fonts/font = SubResource( 3 )
 text = "Help Menu"
 
 [node name="ToDo" type="TouchScreenButton" parent="Directory"]
-position = Vector2( 271, 456 )
+position = Vector2( 277, 398 )
 scale = Vector2( 3.1875, 3.39034 )
 normal = ExtResource( 5 )
 
 [node name="Schedule" type="TouchScreenButton" parent="Directory"]
-position = Vector2( 284, 326 )
+position = Vector2( 291, 282 )
 scale = Vector2( 2.375, 2.69318 )
 normal = ExtResource( 6 )
 
 [node name="Habits" type="TouchScreenButton" parent="Directory"]
-position = Vector2( 241, 546 )
+position = Vector2( 243, 490 )
 scale = Vector2( 5.5625, 6.03872 )
 normal = ExtResource( 11 )
 
 [node name="HelpMenu" type="TouchScreenButton" parent="Directory"]
-position = Vector2( 290, 233 )
+position = Vector2( 294, 199 )
 scale = Vector2( 2.1875, 2.06997 )
 normal = ExtResource( 15 )
+
+[node name="ToDoObject" type="Area2D" parent="Directory"]
+
+[node name="ToDoCollision" type="CollisionShape2D" parent="Directory/ToDoObject"]
+position = Vector2( 327, 450 )
+shape = SubResource( 4 )
+
+[node name="ScheduleObject" type="Area2D" parent="Directory"]
+
+[node name="ScheduleCollision" type="CollisionShape2D" parent="Directory/ScheduleObject"]
+position = Vector2( 329.5, 329 )
+shape = SubResource( 5 )
+
+[node name="HabitObject" type="Area2D" parent="Directory"]
+
+[node name="HabitCollision" type="CollisionShape2D" parent="Directory/HabitObject"]
+position = Vector2( 324, 578 )
+rotation = 1.5708
+shape = SubResource( 6 )
+
+[node name="HelpObject" type="Area2D" parent="Directory"]
+
+[node name="HelpCollision" type="CollisionShape2D" parent="Directory/HelpObject"]
+position = Vector2( 328, 233 )
+rotation = 1.5708
+shape = SubResource( 7 )
 
 [node name="DPad" type="Node" parent="."]
 
@@ -167,3 +199,7 @@ action = "ui_right"
 [connection signal="pressed" from="Directory/Schedule" to="." method="_on_Schedule_pressed"]
 [connection signal="pressed" from="Directory/Habits" to="." method="_on_Habits_pressed"]
 [connection signal="pressed" from="Directory/HelpMenu" to="." method="_on_HelpMenu_pressed"]
+[connection signal="body_entered" from="Directory/ToDoObject" to="." method="_on_ToDoObject_body_entered"]
+[connection signal="body_entered" from="Directory/ScheduleObject" to="." method="_on_ScheduleObject_body_entered"]
+[connection signal="body_entered" from="Directory/HabitObject" to="." method="_on_HabitObject_body_entered"]
+[connection signal="body_entered" from="Directory/HelpObject" to="." method="_on_HelpObject_body_entered"]

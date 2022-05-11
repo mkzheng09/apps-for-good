@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exercise.png-d855c9e04dd0c4084e28af3f5e9b669a.stex"
+path="res://.import/floor.png-a8dfee1b78275ae8aac1a8e1374d1c73.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://exercise.png"
-dest_files=[ "res://.import/exercise.png-d855c9e04dd0c4084e28af3f5e9b669a.stex" ]
+source_file="res://Graphics/floor.png"
+dest_files=[ "res://.import/floor.png-a8dfee1b78275ae8aac1a8e1374d1c73.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
