@@ -77,9 +77,7 @@ text = "Tips and Tricks:
   can be deleted using the trashcan icon
 
 - The Habit Tracker contains sliders to track the daily
-  completion of several pre-built habits
-
-- All data is reset on a daily basis"
+  completion of several pre-built habits"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2( 14, 18 )

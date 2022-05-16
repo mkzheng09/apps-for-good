@@ -39,3 +39,15 @@ func _on_Timer_habitreset():
 	$Sleep/HSlider.value = 0
 	$DailyHomework/HSlider.value = 0
 	$Chores/HSlider.value = 0
+
+#when reset all button pressed, popiup show
+func _on_ResetAll_pressed():
+	$Popup/ConfirmationDialog.show()
+
+#resets habit list
+func _on_ConfirmationDialog_confirmed():
+	$Water/HSlider.value = 0
+	$Exercise/HSlider.value = 0
+	$Sleep/HSlider.value = 0
+	$DailyHomework/HSlider.value = 0
+	$Chores/HSlider.value = 0

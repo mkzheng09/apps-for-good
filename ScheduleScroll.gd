@@ -242,3 +242,19 @@ func _on_Control_tree_entered():
 				$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_icon(n, takenicon)
 		
 
+
+#button to clear all events is pressed, popup shows
+func _on_ClearAll_pressed():
+	$Popup/ConfirmationDialog.show()
+
+#confirmation popup is confirmed
+func _on_ConfirmationDialog_confirmed():
+	schedule_clearall()
+
+#clears whole schedule
+func schedule_clearall():
+	var emptyicon = load("res://Assets/emptySlot.png")
+	for n in range(0,$ScrollContainer/VBox/HBox3/VBox2/ItemList.get_item_count()):
+		$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_icon(n, emptyicon)
+		$ScrollContainer/VBox/HBox3/VBox2/ItemList.set_item_text(n, "")
+

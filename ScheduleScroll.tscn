@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Montserrat/static/Montserrat-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Graphics/pixil-frame-0 (3).png" type="Texture" id=2]
@@ -7,12 +7,16 @@
 [ext_resource path="res://Graphics/PlusButton.png" type="Texture" id=5]
 [ext_resource path="res://ResetSchedule.gd" type="Script" id=6]
 [ext_resource path="res://Theme1.tres" type="Theme" id=7]
+[ext_resource path="res://Assets/trashcantemp.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.909804, 0.956863, 1, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -76,6 +80,21 @@ align = 1
 position = Vector2( 15, 16 )
 scale = Vector2( 2, 2 )
 normal = ExtResource( 2 )
+
+[node name="ClearAll" type="TouchScreenButton" parent="ScrollContainer/VBox/HBox1/Panel"]
+position = Vector2( 301, 13 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBox/HBox1/Panel/ClearAll"]
+margin_left = 7.0
+margin_top = 76.0
+margin_right = 80.0
+margin_bottom = 97.0
+theme = ExtResource( 7 )
+custom_fonts/font = SubResource( 9 )
+text = "Clear All"
+align = 1
 
 [node name="HBox2" type="HBoxContainer" parent="ScrollContainer/VBox"]
 margin_top = 104.0
@@ -354,6 +373,7 @@ margin_top = 26.0
 margin_right = 280.0
 margin_bottom = 1206.0
 rect_min_size = Vector2( 280, 1180 )
+custom_colors/guide_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 items = [ "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false, "", ExtResource( 4 ), false ]
 
@@ -368,9 +388,9 @@ margin_top = -100.0
 margin_right = 150.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 300, 200 )
+theme = ExtResource( 7 )
 
 [node name="AlrTaken" type="AcceptDialog" parent="Popup"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -386,7 +406,6 @@ Please either clear the existing event from the schedule or enter a new time."
 dialog_autowrap = true
 
 [node name="InvalidTime" type="AcceptDialog" parent="Popup"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -400,6 +419,19 @@ theme = ExtResource( 7 )
 dialog_text = "The time frame you entered is invalid, please double check the start and end times!"
 dialog_autowrap = true
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -155.0
+margin_top = -70.0
+margin_right = 155.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 200, 140 )
+theme = ExtResource( 7 )
+dialog_text = "Are you sure you want to clear your schedule?"
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 86400.0
 script = ExtResource( 6 )
@@ -407,6 +439,7 @@ script = ExtResource( 6 )
 [connection signal="tree_entered" from="." to="." method="_on_Control_tree_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_Control_tree_exiting"]
 [connection signal="pressed" from="ScrollContainer/VBox/HBox1/Panel/BackB" to="." method="_on_BackB_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBox/HBox1/Panel/ClearAll" to="." method="_on_ClearAll_pressed"]
 [connection signal="text_changed" from="ScrollContainer/VBox/HBox2/ActivityEdit" to="." method="_on_ActivityEdit_text_changed"]
 [connection signal="text_entered" from="ScrollContainer/VBox/HBox2/ActivityEdit" to="." method="_on_ActivityEdit_text_entered"]
 [connection signal="pressed" from="ScrollContainer/VBox/HBox2/Add" to="." method="_on_Add_pressed"]
@@ -416,4 +449,5 @@ script = ExtResource( 6 )
 [connection signal="nothing_selected" from="ScrollContainer/VBox/HBox3/VBox2/ItemList" to="." method="_on_ItemList_nothing_selected"]
 [connection signal="confirmed" from="Popup/AlrTaken" to="." method="_on_AlrTaken_confirmed"]
 [connection signal="confirmed" from="Popup/InvalidTime" to="." method="_on_InvalidTime_confirmed"]
+[connection signal="confirmed" from="Popup/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
 [connection signal="midnight" from="Timer" to="." method="_on_Timer_midnight"]
